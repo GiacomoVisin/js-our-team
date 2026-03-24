@@ -46,9 +46,9 @@ for (let i = 0; i < teamMembers.length; i++) {
 
 const card = `<div class="col-lg-4 col-md-6  mb-4">
                    <div class="card mt-5 d-flex flex-row bg-dark text-white">
-                       <img src="./assets/${img}" alt="userimg">
+                       <img class="img-fluid"   style="width:120px; object-fit:cover;"  " src="./assets/${img}" alt="userimg">
                        <div class="card-body ">
-                          <h5>${name}</h5> 
+                          <h5 style= "font-weight: bold;">${name.toUpperCase()}</h5> 
                            <p> ${role}</p>
                            <p class="text-info" > ${email}</p>
                      </div>
