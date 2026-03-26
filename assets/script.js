@@ -45,7 +45,7 @@ function AddMemberCard(name, role, email, img) {
 
   const card = `<div class="col-lg-4 col-md-6  mb-4">
                    <div class="card mt-5 d-flex flex-row bg-dark text-white">
-                       <img class="img-fluid"   style="width:120px; object-fit:cover;"  " src="./assets/${img}" alt="userimg">
+                       <img class="img-fluid"   style="width:120px; object-fit:cover;" src="./assets/${img}" alt="userimg">
                        <div class="card-body ">
                           <h5 style= "font-weight: bold;">${name.toUpperCase()}</h5> 
                            <p> ${role}</p>
@@ -62,16 +62,16 @@ function AddMemberCard(name, role, email, img) {
 
 function renderingTeam(teamMembers, container) {
 
-cards = ``
+
+  let cards = "";
 
 for (let i = 0; i < teamMembers.length; i++) {
   const { name, role, email, img } = teamMembers[i]
 
-
-  cards += AddMemberCard(name, role, email, img)
-  container.innerHTML += AddMemberCard(name, role, email, img)
+   cards += AddMemberCard(name, role, email, img);
+ 
 }
-
+  container.innerHTML = cards;
 
 
 }
@@ -107,7 +107,9 @@ myForm.addEventListener(`submit`, function (e) {
 
   teamMembers.unshift(newMember)
 
-  container
+  renderingTeam(teamMembers,container)
+
+ 
 
 })
 
