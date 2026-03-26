@@ -92,6 +92,7 @@ const newImg = document.getElementById(`img-new-members`)
 
 myForm.addEventListener(`submit`, function (e) {
   e.preventDefault()
+ 
 
   const name = newName.value
   const role = newRole.value
@@ -109,7 +110,7 @@ myForm.addEventListener(`submit`, function (e) {
 
   renderingTeam(teamMembers,container)
 
- 
+  myForm.reset()
 
 })
 
