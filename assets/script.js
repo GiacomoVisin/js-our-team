@@ -60,7 +60,7 @@ function AddMemberCard(name, role, email, img) {
 
 
 
-function renderingTeam(teamMembers, container) {
+function renderingTeam(teamMembers, dom) {
 
 
   let cards = "";
@@ -71,12 +71,12 @@ for (let i = 0; i < teamMembers.length; i++) {
    cards += AddMemberCard(name, role, email, img);
  
 }
-  container.innerHTML = cards;
+  dom.innerHTML = cards;
 
 
 }
 
-renderingTeam(teamMembers,container)
+renderingTeam(teamMembers,dom)
 
 
 
