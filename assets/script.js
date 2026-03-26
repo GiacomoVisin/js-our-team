@@ -40,10 +40,9 @@ const teamMembers = [
 
 const container = document.getElementById(`card-container`)
 
-for (let i = 0; i < teamMembers.length; i++) {
-  const { name, role, email, img } = teamMembers[i]
 
-
+function AddMemberCard (name,role,email,img) {
+  
 const card = `<div class="col-lg-4 col-md-6  mb-4">
                    <div class="card mt-5 d-flex flex-row bg-dark text-white">
                        <img class="img-fluid"   style="width:120px; object-fit:cover;"  " src="./assets/${img}" alt="userimg">
@@ -54,9 +53,49 @@ const card = `<div class="col-lg-4 col-md-6  mb-4">
                      </div>
                     </div>
               </div>`
-              container.innerHTML += card
+
+              return card
+}
+
+
+
+
+for (let i = 0; i < teamMembers.length; i++) {
+  const { name, role, email, img } = teamMembers[i]
+
+              container.innerHTML += AddMemberCard(name,role,email,img)
 }  
 
+
+
+const myForm = document.getElementById(`register-form`)
+const newName = document.getElementById(`name-new-members`)
+const newRole = document.getElementById(`role-new-members`)
+const newEmail = document.getElementById(`email-new-members`)
+const newImg = document.getElementById(`img-new-members`)
+
+
+myForm.addEventListener(`submit`, function (e){
+  e.preventDefault()
+
+const name = newName.value
+const role = newRole.value
+const email = newEmail.value
+const img = newImg.value
+
+const newMember = {
+  name,
+  role,
+  email,
+  img
+}
+
+teamMembers.unshift(newMember)
+
+container
+
+})
+  
 
 
 
